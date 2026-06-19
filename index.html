@@ -2,9 +2,189 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Привет</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fugu — Системный язык программирования</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #faf9f6;
+            color: #1a1a1a;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px double #1a1a1a;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        .logo-wrapper {
+            margin-bottom: 20px;
+        }
+
+        .logo-img {
+            max-width: 250px;
+            width: 100%;
+            height: auto;
+            filter: grayscale(1) contrast(1.1);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+            text-transform: lowercase;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555;
+            margin: 0;
+        }
+
+        section {
+            margin-bottom: 40px;
+            border: 1px solid #1a1a1a;
+            background: #fff;
+            padding: 25px;
+            box-shadow: 4px 4px 0px #1a1a1a;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        pre {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 15px;
+            overflow-x: auto;
+            font-size: 0.95rem;
+            border-radius: 0;
+            border: 1px solid #1a1a1a;
+        }
+
+        code {
+            font-family: Consolas, Monaco, monospace;
+        }
+
+        .cmd-line {
+            color: #a6e22e;
+        }
+
+        a {
+            color: #1a1a1a;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        a:hover {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .btn-github {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: 2px solid #1a1a1a;
+            background: #fff;
+            color: #1a1a1a;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            box-shadow: 3px 3px 0px #1a1a1a;
+            transition: all 0.1s ease;
+        }
+
+        .btn-github:hover {
+            background: #1a1a1a;
+            color: #fff;
+            box-shadow: 0px 0px 0px #1a1a1a;
+            transform: translate(3px, 3px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 0.85rem;
+            color: #666;
+            border-top: 1px dashed #1a1a1a;
+            padding-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Привет fugu!</h1>
+
+    <div class="container">
+        
+        <header>
+            <div class="logo-wrapper">
+                <img src="fugu.jpg" alt="fugu logo" class="logo-img">
+            </div>
+            <h1>fugu</h1>
+            <p class="tagline">Системный язык программирования нового поколения</p>
+        </header>
+
+        <section id="about">
+            <h2>О проекте</h2>
+            <p><strong>fugu</strong> - это системный язык программирования, разработанный специально для создания низкоуровневого ПО, такого как операционные системы и драйверы. Проект ориентирован на максимальную производительность и прямой контроль над аппаратными ресурсами.</p>
+            <p>Ключевые принципы разработки:</p>
+            <ul>
+                <li><strong>Читаемый синтаксис</strong> - код должен быть понятным и легко поддерживаемым.</li>
+                <li><strong>Предсказуемость</strong> - отсутствие скрытого поведения компилятора и рантайма.</li>
+                <li><strong>Безопасность памяти</strong> - строгий контроль без ущерба для скорости.</li>
+            </ul>
+        </section>
+
+        <section id="compiler">
+            <h2>Компилятор fugu</h2>
+            <p>Быстрый и легковесный компилятор, написанный на Go. Использует максимально эффективные механизмы разбора исходного кода (парсинга) и генерации целевого бинарного кода.</p>
+        </section>
+
+        <section id="installation">
+            <h2>Быстрый старт</h2>
+            <p>Соберите компилятор из исходников прямо сейчас:</p>
+            <pre><code><span class="cmd-line">$</span> git clone https://github.com
+<span class="cmd-line">$</span> cd fugu
+<span class="cmd-line">$</span> make install</code></pre>
+            
+            <p>Узнать больше о контрибьютинге и спецификации можно в официальном репозитории:</p>
+            <a href="https://github.com/fugalang/fugu" class="btn-github" target="_blank">Открыть GitHub →</a>
+        </section>
+
+        <footer>
+            <p>© 2026 fugalang. Лицензия GPL-3.0. Сделано с любовью к низкому уровню.</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>
