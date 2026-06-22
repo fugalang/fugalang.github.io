@@ -54,7 +54,6 @@ class Dot {
             this.x -= directionX;
             this.y -= directionY;
         } else {
-            // return to base
             this.x += (this.baseX - this.x) * 0.05;
             this.y += (this.baseY - this.y) * 0.05;
         }
