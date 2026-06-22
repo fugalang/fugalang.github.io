@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fugu</title>
-        <style>
+
+    <style>
         body {
             margin: 0;
             padding: 0;
@@ -12,9 +13,22 @@
             color: #1a1a1a;
             font-family: 'Courier New', Courier, monospace;
             line-height: 1.6;
+            overflow: hidden;
         }
 
+        /* GPU background canvas */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        /* main content */
         .container {
+            position: relative;
+            z-index: 1;
+
             max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
@@ -75,16 +89,10 @@
             padding: 15px;
             overflow-x: auto;
             font-size: 0.95rem;
-            border-radius: 0;
-            border: 1px solid #1a1a1a;
         }
 
         code {
             font-family: Consolas, Monaco, monospace;
-        }
-
-        .cmd-line {
-            color: #a6e22e;
         }
 
         a {
@@ -130,51 +138,53 @@
         }
     </style>
 </head>
+
 <body>
 
-    <canvas id="bg">
+<canvas id="bg"></canvas>
 
-    <div class="container">
-        
-        <header>
-            <h1>fugu</h1>
-            <p class="tagline">Системный язык программирования нового поколения</p>
-        </header>
+<div class="container">
 
-        <section id="about">
-            <h2>О проекте</h2>
-            <p><strong>fugu</strong> - это системный язык программирования, разработанный специально для создания низкоуровневого ПО, такого как операционные системы и драйверы. Проект ориентирован на максимальную производительность и прямой контроль над аппаратными ресурсами.</p>
-            <p>Ключевые принципы разработки:</p>
-            <ul>
-                <li><strong>Читаемый синтаксис</strong> - код должен быть понятным и легко поддерживаемым.</li>
-                <li><strong>Предсказуемость</strong> - отсутствие скрытого поведения компилятора и рантайма.</li>
-                <li><strong>Безопасность памяти</strong> - строгий контроль без ущерба для скорости.</li>
-            </ul>
-        </section>
+    <header>
+        <h1>fugu</h1>
+        <p class="tagline">Системный язык программирования нового поколения</p>
+    </header>
 
-        <section id="compiler">
-            <h2>Компилятор fugu</h2>
-            <p>Быстрый и легковесный компилятор, написанный на Go. Использует максимально эффективные механизмы разбора исходного кода (парсинга) и генерации целевого бинарного кода.</p>
-        </section>
+    <section id="about">
+        <h2>О проекте</h2>
+        <p><strong>fugu</strong> - это системный язык программирования, разработанный для создания низкоуровневого ПО: ОС, драйверов и высокопроизводительных систем.</p>
 
-        <section id="installation">
-            <h2>Быстрый старт</h2>
-            <p>Соберите компилятор из исходников прямо сейчас:</p>
-            <pre><code><span class="cmd-line">$</span> git clone https://github.com/fugalang/fugu
-<span class="cmd-line">$</span> cd fugu
-<span class="cmd-line">$</span> make install</code></pre>
-            
-            <p>Узнать больше о контрибьютинге и спецификации можно в официальном репозитории:</p>
-            <a href="https://github.com/fugalang/fugu" class="btn-github" target="_blank">Открыть GitHub →</a>
-        </section>
+        <ul>
+            <li><strong>Читаемый синтаксис</strong></li>
+            <li><strong>Предсказуемое поведение</strong></li>
+            <li><strong>Безопасность памяти</strong></li>
+        </ul>
+    </section>
 
-        <footer>
-            <p>© 2026 fugalang. Лицензия GPL-3.0.</p>
-        </footer>
+    <section id="compiler">
+        <h2>Компилятор</h2>
+        <p>Стартовый компилятор fugus написан на Go и использует табличный парсер и оптимизации.</p>
+    </section>
 
-    </div>
-    </canvas>
+    <section id="installation">
+        <h2>Быстрый старт</h2>
+
+        <pre><code>$ git clone https://github.com/fugalang/fugu
+$ cd fugu
+$ make install</code></pre>
+
+        <a href="https://github.com/fugalang/fugu" class="btn-github" target="_blank">
+            Открыть GitHub →
+        </a>
+    </section>
+
+    <footer>
+        <p>© 2026 fugalang. Лицензия GPL-3.0.</p>
+    </footer>
+
+</div>
 
 <script src="bg.js"></script>
+
 </body>
 </html>
